@@ -1,3 +1,4 @@
+// src/hooks/useAuth.ts
 'use client'
 
 import { useEffect, useState } from 'react'
@@ -19,7 +20,7 @@ export function useAuth() {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?. user ?? null)
+      setUser(session?.user ?? null)
       setLoading(false)
     })
 
